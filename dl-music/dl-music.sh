@@ -6,7 +6,7 @@ function download {
 
   title="$author-$songname"
 
-  output="-o \"$title.%(ext)s\""
+  output="-o $HOME/Music/$title.%(ext)s"
   echo $output
 
   # TODO: add check for output being set
