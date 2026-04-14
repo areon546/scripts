@@ -11,7 +11,7 @@ function download {
 
   # TODO: add check for output being set
 
-  yt-dlp $output https://www.youtube.com/watch?v=at1jUGRBRig $mp3
+  yt-dlp $output $url -x -f bestaudio
 }
 
 function debug {
@@ -24,7 +24,6 @@ function debug {
 function help {
   echo "Usage: "
   echo "	-h : display this"
-  echo "	-m : whether you want to convert it to mp3 or not"
   echo "	-a : author / band "
   echo "	-s : song title "
   echo "	-u : url "
@@ -32,14 +31,12 @@ function help {
 # m o: a: s: u:
 
 doDebug=0
-mp3=0
 url=""
 author="a"
 songname="aa"
 
 while getopts "hma:s:u:" flag; do
   case "${flag}" in
-  m) mp3="-t mp3" ;;
   a) author=$OPTARG ;;
   s) songname=$OPTARG ;;
   u) url=$OPTARG ;;
