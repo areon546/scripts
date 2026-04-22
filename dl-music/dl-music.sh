@@ -9,7 +9,7 @@ function download {
   output="-o $HOME/Music/$title.%(ext)s"
   echo $output
 
-  # TODO: add check for output being set
+  # TODO: add check for output being NEQ $HOME
 
   yt-dlp $output $url -x -f bestaudio
 }
