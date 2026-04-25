@@ -17,7 +17,7 @@ function download {
   # fix if this becomes an issue
 
   # Set tags
-  kid3-cli $filename -c "set title '${songname}' set album '${album}' set artist '${author}' set tracknumber ${tracknum}"
+  kid3-cli $filename -c "set title '${songname}'" -c "set album '${album}'" -c "set artist '${author}'" -c "set tracknumber ${tracknum}"
 
   echo "new file: " $filename
   kid3-cli $filename -c "get"
