@@ -1,14 +1,7 @@
 #!/bin/bash
 
 function download {
-
-  # TODO: add check for url being set
-
   output="-o $HOME/Music/albums/$author/$album/$songname.%(ext)s"
-  echo $output
-
-  # TODO: add check for output being NEQ $HOME
-
   yt-dlp $output $url -x -f bestaudio
 
   filename=$(yt-dlp --print filename $output $url -x -f bestaudio)
@@ -38,6 +31,7 @@ function help {
   echo "	-l : album name"
   echo "	-t : song title"
   echo "	-n : tracknumber"
+  exit 0
 }
 
 doDebug=0
@@ -56,7 +50,6 @@ while getopts "hma:l:t:u:n:" flag; do
   n) tracknum=$OPTARG ;;
   h)
     help
-    exit 0
     ;;
   esac
 done
@@ -65,7 +58,6 @@ debug
 
 if test -z "$url"; then
   help
-  exit 0
 fi
 
 download

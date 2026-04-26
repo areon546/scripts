@@ -2,13 +2,17 @@
 
 Downloads music to your Music directory. 
 
-Use -a (author), -s (songname), and -u (url) to determine the filename and song. 
+Usage: 
+	-h : display this
+	-u : url                required 
+	-a : author / band      recommended
+	-t : song title         recommended
+	-l : album name         optional 
+	-n : tracknumber        optional
 
--u is the only required one, however otherwise it will use the default filetype 
-from youtube, gathered using yt-dlp.
 
-
-Dependency
+Dependencies
+- yt-dlp (downloading music)
 - kid3-cli (open source audio file tag editor)
 
 
